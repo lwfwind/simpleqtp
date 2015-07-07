@@ -1,0 +1,1587 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED qcserver CDATA #IMPLIED qcproject CDATA #IMPLIED  >
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,AdditionalInfo*,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,Res,DVer?,TSet?,TInst?,RunType?,DT?,AdditionalInfo*,Step*,DIter*,Step*,Action*,Summary?,TestMaintenanceSummary*,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT AdditionalInfo (AdditionalDataName,AdditionalDataValue ) >
+
+<!ELEMENT AdditionalDataName ( #PCDATA ) >
+
+<!ELEMENT AdditionalDataValue ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step?,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*,Summary,ActionMaintenanceSummary*,NodeArgs ) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT TestMaintenanceSummary (ActionMaintenanceSummary*) >
+<!ATTLIST TestMaintenanceSummary ObjectsAdded CDATA #REQUIRED ObjectsUpdated CDATA #REQUIRED StepsUpdated CDATA #REQUIRED StepsComments CDATA #REQUIRED><!ELEMENT ActionMaintenanceSummary (ObjectChange* ) >
+<!ATTLIST ActionMaintenanceSummary Action CDATA #REQUIRED Objects CDATA #REQUIRED Updated CDATA #REQUIRED LinesTotal CDATA #REQUIRED Added CDATA #REQUIRED LinesUpdated CDATA #REQUIRED>
+
+<!ELEMENT ObjectChange  (Hierarchy, PropertyChangeList* ) >
+<!ATTLIST ObjectChange Operation CDATA #IMPLIED OriginalRepository CDATA #IMPLIED>
+
+<!ELEMENT PropertyChangeList (PropertyDef*) >
+
+<!ELEMENT PropertyDef (OriginalValue, NewValue) >
+<!ATTLIST PropertyDef PropName CDATA #REQUIRED OriginRegularExpression (True|False) "False" NewRegularExpression (True|False) "False" AddedProperty (True|False) "False" >
+
+<!ELEMENT OriginalValue ( #PCDATA )>
+
+<!ELEMENT NewValue ( #PCDATA )>
+
+<!ELEMENT Hierarchy  (ObjectName, Hierarchy*) >
+<!ATTLIST Hierarchy MicClass CDATA #REQUIRED>
+
+<!ELEMENT ObjectName  ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,TimeTick* ,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,TimeTick*,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT TimeTick ( #PCDATA ) >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?)>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED MovieMarker CDATA "">
+<!ATTLIST NodeArgs Source CDATA #IMPLIED SourceLine CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="China Standard Time">
+<General productName="QuickTest Professional" productVer="10.00" os="Windows XP" host="LWFWIND-7BB2A92"><DocLocation><![CDATA[C:\Documents and Settings\lwfwind\Desktop\SimpleQTP V3.4\MainScript]]></DocLocation></General>
+<Doc rID="T1"   productName= "QuickTest Professional"  >
+<DName><![CDATA[MainScript]]></DName>
+<Res><![CDATA[Res5]]></Res>
+<DT rID="T2">
+<NodeArgs eType="Table" icon="2" nRep="4" filter="False" >
+<Disp><![CDATA[Run-Time Data Table]]></Disp>
+<BtmPane vType="Table">
+<Path><![CDATA[Default.xls]]></Path>
+</BtmPane>
+</NodeArgs>
+</DT>
+<DIter rID="T3" iterID="1" >
+<Action rID="T4">
+<AName><![CDATA[Action1]]></AName>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[Login]]></Obj>
+<Details plainTxt="False" ><![CDATA[Dialog]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:08]]></Time>
+<TimeTick>1322371448</TimeTick>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[Login.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:08]]></Time>
+<TimeTick>1322371448</TimeTick>
+<NodeArgs eType="Replay" icon="5" nRep="10" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Login.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T7">
+<Obj plainTxt="False" ><![CDATA[Agent Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:08]]></Time>
+<TimeTick>1322371448</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="15" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Agent Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T8">
+<Obj plainTxt="False" ><![CDATA[Password:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:08]]></Time>
+<TimeTick>1322371448</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="20" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Password:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T9">
+<Obj plainTxt="False" ><![CDATA[OK.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:08]]></Time>
+<TimeTick>1322371448</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="25" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[OK.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T10">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Login_Dialog was not found.Please check the object properies
+Object #2AgentName was not found.Please check the object properies
+Object #3Password was not found.Please check the object properies
+Object #4OK was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:08]]></Time>
+<TimeTick>1322371448</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="26" status="Warning" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA[Login.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="Replay" icon="5" nRep="27" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Login.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Agent Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="28" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Agent Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[Password:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="29" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Password:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T14">
+<Obj plainTxt="False" ><![CDATA[OK.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="30" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[OK.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T15">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Login_Dialog was found.
+Object #2AgentName was found.
+Object #3Password was found.
+Object #4OK was found.]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="31" status="Passed" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T16">
+<Obj ><![CDATA[GUI Layer initialization]]></Obj>
+<Details ><![CDATA[All Login GUI context objects have been loaded successfully]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="32" status="Passed" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[GUI Layer initialization]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T17">
+<Obj plainTxt="False" ><![CDATA[Agent Name:.SetText]]></Obj>
+<Details plainTxt="False" ><![CDATA[]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="34" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Agent Name:.SetText]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T18">
+<Obj ><![CDATA[SetAgentName]]></Obj>
+<Details ><![CDATA[Set successfully]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:10]]></Time>
+<TimeTick>1322371450</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="35" status="Passed" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[SetAgentName]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T19">
+<Obj plainTxt="False" ><![CDATA[Password:.SetText]]></Obj>
+<Details plainTxt="False" ><![CDATA[]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="37" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Password:.SetText]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T20">
+<Obj ><![CDATA[SetPassword]]></Obj>
+<Details ><![CDATA[Set successfully]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="38" status="Passed" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[SetPassword]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T21">
+<Obj plainTxt="False" ><![CDATA[OK.Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="40" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[OK.Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T22">
+<Obj plainTxt="False" ><![CDATA[OK.Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="42" status="Warning" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[OK.Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T23">
+<Obj plainTxt="False" ><![CDATA[OK]]></Obj>
+<Details plainTxt="False" ><![CDATA[Object not visible]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<Step rID="T24">
+<Obj plainTxt="False" ><![CDATA[OK]]></Obj>
+<Details plainTxt="False" ><![CDATA[Object's physical description:<br>Text = OK<br>simclass = Button<br>Native Class = Button<br>]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="9" nRep="44" status="Warning" nType="Description" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[OK]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Replay" icon="7" nRep="43" status="Failed" nType="Run Error" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[OK]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="5" nRep="9" status="Failed" Source="Action1" SourceLine="-1" >
+<Disp><![CDATA[Login]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T25">
+<Obj plainTxt="False" ><![CDATA[Run Error]]></Obj>
+<Details plainTxt="False" ><![CDATA[Object not visible<BR>Line (80): &quot;&quot;. ]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="9" nRep="45" status="Failed" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Run Error]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T26">
+<Obj ><![CDATA[Submit]]></Obj>
+<Details ><![CDATA[Login successfully]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="46" status="Passed" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Submit]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T27">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation]]></Obj>
+<Details plainTxt="False" ><![CDATA[Window]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<Step rID="T28">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="49" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T29">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="54" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="59" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T31">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="64" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T32">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="69" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T33">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="74" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T34">
+<Obj plainTxt="False" ><![CDATA[Insert Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="79" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Insert Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T35">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="84" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T36">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Date was not found.Please check the object properies
+Object #3FlyFrom was not found.Please check the object properies
+Object #4FlyTo was not found.Please check the object properies
+Object #5FLIGHT_button was not found.Please check the object properies
+Object #6Name was not found.Please check the object properies
+Object #7Insert Order was not found.Please check the object properies
+Object #8ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:11]]></Time>
+<TimeTick>1322371451</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="85" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T37">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="87" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T38">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="92" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T39">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="97" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T40">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="102" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T41">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="107" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T42">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="112" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T43">
+<Obj plainTxt="False" ><![CDATA[Insert Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="117" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Insert Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T44">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="122" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T45">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Date was not found.Please check the object properies
+Object #3FlyFrom was not found.Please check the object properies
+Object #4FlyTo was not found.Please check the object properies
+Object #5FLIGHT_button was not found.Please check the object properies
+Object #6Name was not found.Please check the object properies
+Object #7Insert Order was not found.Please check the object properies
+Object #8ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:13]]></Time>
+<TimeTick>1322371453</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="123" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T46">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="125" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T47">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="130" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T48">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="135" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T49">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="140" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T50">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="145" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T51">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="150" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T52">
+<Obj plainTxt="False" ><![CDATA[Insert Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="155" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Insert Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T53">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="160" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T54">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Date was not found.Please check the object properies
+Object #3FlyFrom was not found.Please check the object properies
+Object #4FlyTo was not found.Please check the object properies
+Object #5FLIGHT_button was not found.Please check the object properies
+Object #6Name was not found.Please check the object properies
+Object #7Insert Order was not found.Please check the object properies
+Object #8ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:15]]></Time>
+<TimeTick>1322371455</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="161" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T55">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="163" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T56">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="168" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T57">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="173" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T58">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="178" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T59">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="183" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T60">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="188" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T61">
+<Obj plainTxt="False" ><![CDATA[Insert Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="193" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Insert Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T62">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="198" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T63">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Date was not found.Please check the object properies
+Object #3FlyFrom was not found.Please check the object properies
+Object #4FlyTo was not found.Please check the object properies
+Object #5FLIGHT_button was not found.Please check the object properies
+Object #6Name was not found.Please check the object properies
+Object #7Insert Order was not found.Please check the object properies
+Object #8ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:17]]></Time>
+<TimeTick>1322371457</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="199" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T64">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="201" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T65">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="206" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T66">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="211" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T67">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="216" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T68">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="221" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T69">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="226" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T70">
+<Obj plainTxt="False" ><![CDATA[Insert Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="231" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Insert Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T71">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="236" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T72">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Date was not found.Please check the object properies
+Object #3FlyFrom was not found.Please check the object properies
+Object #4FlyTo was not found.Please check the object properies
+Object #5FLIGHT_button was not found.Please check the object properies
+Object #6Name was not found.Please check the object properies
+Object #7Insert Order was not found.Please check the object properies
+Object #8ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:19]]></Time>
+<TimeTick>1322371459</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="237" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T73">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="239" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T74">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="244" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T75">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="249" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T76">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="254" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T77">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="259" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T78">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="264" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T79">
+<Obj plainTxt="False" ><![CDATA[Insert Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="269" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Insert Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T80">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="274" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T81">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Date was not found.Please check the object properies
+Object #3FlyFrom was not found.Please check the object properies
+Object #4FlyTo was not found.Please check the object properies
+Object #5FLIGHT_button was not found.Please check the object properies
+Object #6Name was not found.Please check the object properies
+Object #7Insert Order was not found.Please check the object properies
+Object #8ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:21]]></Time>
+<TimeTick>1322371461</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="275" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T82">
+<Obj ><![CDATA[GUI Layer initialization]]></Obj>
+<Details ><![CDATA[All InsertOrder GUI objects should be loaded successfully but Not All InsertOrder GUI objects have loaded successfully]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="276" status="Failed" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[GUI Layer initialization]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T83">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="278" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T84">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="283" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T85">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="288" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T86">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="293" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T87">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="298" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T88">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="303" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T89">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="308" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T90">
+<Obj plainTxt="False" ><![CDATA[Update Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="313" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Update Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T91">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="318" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T92">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Open Order was not found.Please check the object properies
+Object #3Date was not found.Please check the object properies
+Object #4FlyFrom was not found.Please check the object properies
+Object #5FlyTo was not found.Please check the object properies
+Object #6FLIGHT_button was not found.Please check the object properies
+Object #7Name was not found.Please check the object properies
+Object #8Update Order was not found.Please check the object properies
+Object #9ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:23]]></Time>
+<TimeTick>1322371463</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="319" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T93">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:25]]></Time>
+<TimeTick>1322371465</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="321" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T94">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:25]]></Time>
+<TimeTick>1322371465</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="326" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T95">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="331" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T96">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="336" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T97">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="341" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T98">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="346" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T99">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="351" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T100">
+<Obj plainTxt="False" ><![CDATA[Update Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="356" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Update Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T101">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="361" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T102">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Open Order was not found.Please check the object properies
+Object #3Date was not found.Please check the object properies
+Object #4FlyFrom was not found.Please check the object properies
+Object #5FlyTo was not found.Please check the object properies
+Object #6FLIGHT_button was not found.Please check the object properies
+Object #7Name was not found.Please check the object properies
+Object #8Update Order was not found.Please check the object properies
+Object #9ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:26]]></Time>
+<TimeTick>1322371466</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="362" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T103">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="364" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T104">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="369" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T105">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="374" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T106">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="379" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T107">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="384" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T108">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="389" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T109">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="394" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T110">
+<Obj plainTxt="False" ><![CDATA[Update Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="399" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Update Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T111">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="404" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T112">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Open Order was not found.Please check the object properies
+Object #3Date was not found.Please check the object properies
+Object #4FlyFrom was not found.Please check the object properies
+Object #5FlyTo was not found.Please check the object properies
+Object #6FLIGHT_button was not found.Please check the object properies
+Object #7Name was not found.Please check the object properies
+Object #8Update Order was not found.Please check the object properies
+Object #9ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:28]]></Time>
+<TimeTick>1322371468</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="405" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T113">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="407" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T114">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="412" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T115">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="417" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T116">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="422" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T117">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="427" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T118">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="432" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T119">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="437" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T120">
+<Obj plainTxt="False" ><![CDATA[Update Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="442" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Update Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T121">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="447" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T122">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Open Order was not found.Please check the object properies
+Object #3Date was not found.Please check the object properies
+Object #4FlyFrom was not found.Please check the object properies
+Object #5FlyTo was not found.Please check the object properies
+Object #6FLIGHT_button was not found.Please check the object properies
+Object #7Name was not found.Please check the object properies
+Object #8Update Order was not found.Please check the object properies
+Object #9ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:30]]></Time>
+<TimeTick>1322371470</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="448" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T123">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="450" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T124">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="455" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T125">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="460" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T126">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="465" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T127">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="470" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T128">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="475" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T129">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="480" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T130">
+<Obj plainTxt="False" ><![CDATA[Update Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="485" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Update Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T131">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="490" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T132">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Open Order was not found.Please check the object properies
+Object #3Date was not found.Please check the object properies
+Object #4FlyFrom was not found.Please check the object properies
+Object #5FlyTo was not found.Please check the object properies
+Object #6FLIGHT_button was not found.Please check the object properies
+Object #7Name was not found.Please check the object properies
+Object #8Update Order was not found.Please check the object properies
+Object #9ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:32]]></Time>
+<TimeTick>1322371472</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="491" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T133">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="493" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T134">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="498" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T135">
+<Obj plainTxt="False" ><![CDATA[MaskEdBox.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="503" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[MaskEdBox.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T136">
+<Obj plainTxt="False" ><![CDATA[Fly From:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="508" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly From:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T137">
+<Obj plainTxt="False" ><![CDATA[Fly To:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="12" nRep="513" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Fly To:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T138">
+<Obj plainTxt="False" ><![CDATA[FLIGHT.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="518" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[FLIGHT.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T139">
+<Obj plainTxt="False" ><![CDATA[Name:.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="6" nRep="523" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Name:.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T140">
+<Obj plainTxt="False" ><![CDATA[Update Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="528" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Update Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T141">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="533" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T142">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was not found.Please check the object properies
+Object #2Open Order was not found.Please check the object properies
+Object #3Date was not found.Please check the object properies
+Object #4FlyFrom was not found.Please check the object properies
+Object #5FlyTo was not found.Please check the object properies
+Object #6FLIGHT_button was not found.Please check the object properies
+Object #7Name was not found.Please check the object properies
+Object #8Update Order was not found.Please check the object properies
+Object #9ProgressBar was not found.Please check the object properies]]></Details>
+<Time><![CDATA[11/27/2011 - 13:24:34]]></Time>
+<TimeTick>1322371474</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="534" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T143">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.WaitProperty]]></Obj>
+<Details plainTxt="False" ><![CDATA["text", "Insert Done...", 10000]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:00]]></Time>
+<TimeTick>1322371500</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="540" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.WaitProperty]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T144">
+<Obj ><![CDATA[GUI Layer initialization]]></Obj>
+<Details ><![CDATA[All UpdateOrder GUI objects should be loaded successfully but Not All UpdateOrder GUI objects have loaded successfully]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:00]]></Time>
+<TimeTick>1322371500</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="541" status="Failed" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[GUI Layer initialization]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T145">
+<Obj plainTxt="False" ><![CDATA[Flight Reservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:00]]></Time>
+<TimeTick>1322371500</TimeTick>
+<NodeArgs eType="Replay" icon="10" nRep="542" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T146">
+<Obj plainTxt="False" ><![CDATA[Button.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:00]]></Time>
+<TimeTick>1322371500</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="543" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Button.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T147">
+<Obj plainTxt="False" ><![CDATA[Delete Order.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:00]]></Time>
+<TimeTick>1322371500</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="544" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Delete Order.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T148">
+<Obj ><![CDATA[IsContextLoaded]]></Obj>
+<Details ><![CDATA[
+Object #1Flight Reservation was found.
+Object #2Open Order was found.
+Object #3Delete Order was found.]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:00]]></Time>
+<TimeTick>1322371500</TimeTick>
+<NodeArgs eType="User" icon="8" nRep="545" status="Passed" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[IsContextLoaded]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T149">
+<Obj plainTxt="False" ><![CDATA[Threed Panel Control.WaitProperty]]></Obj>
+<Details plainTxt="False" ><![CDATA["text", "Update Done...", "", 10000]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:03]]></Time>
+<TimeTick>1322371503</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="547" status="Warning" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Threed Panel Control.WaitProperty]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T150">
+<Obj plainTxt="False" ><![CDATA[Stop Run]]></Obj>
+<Details plainTxt="False" ><![CDATA[Run stopped by user.]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:03]]></Time>
+<TimeTick>1322371503</TimeTick>
+<NodeArgs eType="General" icon="13" nRep="548" >
+<Disp><![CDATA[Stop Run]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="10" nRep="48" status="Failed" Source="Action1" SourceLine="79" >
+<Disp><![CDATA[Flight Reservation]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="11/27/2011 - 13:24:06" eTime="11/27/2011 - 13:25:03" passed="6" failed="4" warnings="17" ></Summary>
+<NodeArgs eType="StartAction" icon="4" nRep="7" status="Failed" >
+<Disp><![CDATA[Action1 Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="6" status="Failed" >
+<Disp><![CDATA[MainScript Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<Step rID="T151">
+<Obj plainTxt="False" ><![CDATA[Stop Run]]></Obj>
+<Details plainTxt="False" ><![CDATA[Run stopped by user.]]></Details>
+<Time><![CDATA[11/27/2011 - 13:25:03]]></Time>
+<TimeTick>1322371503</TimeTick>
+<NodeArgs eType="General" icon="14" nRep="551" >
+<Disp><![CDATA[Stop Run]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="11/27/2011 - 13:24:05" eTime="11/27/2011 - 13:25:03" passed="6" failed="4" warnings="17" stopped="True" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="3" status="Failed" >
+<Disp><![CDATA[Test MainScript Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>
